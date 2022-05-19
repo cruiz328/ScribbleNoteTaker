@@ -6,6 +6,13 @@ const app = express();
 const htmlRoutes = require('./routes/html')
 const apiRoutes = require('./routes/api');
 
+var bodyParser = require('body-parser')
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 
 // Process.env is what's known as the environmental variable
 const PORT = process.env.PORT || 3001;

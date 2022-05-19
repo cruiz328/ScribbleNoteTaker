@@ -12,7 +12,7 @@ router.get('/notes', (req, res) => {
 
 router.post('/notes', (req, res) => {
     // new note, new ID
-    console.log(uuidv4)
+    console.log(uuidv4());
     req.body.id = uuidv4();
 
     if(!validatePost(req.body)) {
